@@ -116,33 +116,41 @@ const Calculator = () => {
 
       {/* History Section - Only shown when showHistory is true */}
       {showHistory && (
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "40px" }}>
           <h3>Calculation History</h3>
           {history.length === 0 ? (
             <p>No calculations yet.</p>
           ) : (
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              alignItems: "center"
+            }}>
               {history.map((item) => (
-                <li
+                <div
                   key={item._id}
                   style={{
                     width: "100%",
-                    maxWidth: "450px",
-                    padding: "10px",
-                    margin: "5px 0",
+                    maxWidth: "450px",  // This reduces the width of each box
+                    padding: "14px 20px",
                     backgroundColor: "#f8f9fa",
-                    borderRadius: "5px",
-                    border: "1px solid #ddd"
+                    borderRadius: "10px",
+                    border: "1px solid #e0e0e0",
+                    boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                    textAlign: "center",
+                    fontSize: "16px"
                   }}
                 >
-                  {item.num1} {item.operation} {item.num2} = <strong>{item.result}</strong>
-                  <br />
-                  <small style={{ color: "#666" }}>
+                  <div style={{marginBottom: "6px" }}>
+                    {item.num1} {item.operation} {item.num2} = <span style={{ color: "#0f1010ff", fontWeight: "bold" }}>{item.result}</span>
+                  </div>
+                  <div style={{ fontSize: "13px", color: "#666" }}>
                     {new Date(item.createdAt).toLocaleString()}
-                  </small>
-                </li>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           )}
         </div>
       )}
