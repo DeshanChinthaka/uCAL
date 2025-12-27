@@ -126,6 +126,8 @@ const Calculator = () => {
                 <li
                   key={item._id}
                   style={{
+                    width: "100%",
+                    maxWidth: "450px",
                     padding: "10px",
                     margin: "5px 0",
                     backgroundColor: "#f8f9fa",
