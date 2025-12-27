@@ -8,6 +8,7 @@ const Calculator = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
   const [history, setHistory] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
 
   const calculate = async () => {
     setError("");
@@ -39,6 +40,13 @@ const Calculator = () => {
     } catch (err) {
       console.error("Failed to fetch history");
     }
+  };
+
+  const toggleHistory = () => {
+    if (!showHistory) {
+      fetchHistory(); // Fetch fresh data when showing
+    }
+    setShowHistory(!showHistory);
   };
 
   useEffect(() => {
@@ -88,23 +96,54 @@ const Calculator = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
       {result !== null && <h2>Result: {result}</h2>}
 
-      <div style={{ marginTop: "50px" }}>
-        <h3>Calculation History</h3>
-        {history.length === 0 ? (
-          <p>No calculations yet.</p>
-        ) : (
-          <ul style={{ listStyle: "none", padding: 0 }}>
-            {history.map((item) => (
-              <li key={item._id} style={{ padding: "8px", borderBottom: "1px solid #ddd" }}>
-                {item.num1} {item.operation} {item.num2} = <strong>{item.result}</strong>
-                <small style={{ color: "#666", marginLeft: "10px" }}>
-                  ({new Date(item.createdAt).toLocaleString()})
-                </small>
-              </li>
-            ))}
-          </ul>
-        )}
+      {/* Toggle History Button */}
+      <div style={{ marginTop: "30px" }}>
+        <button
+          onClick={toggleHistory}
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer"
+          }}
+        >
+          {showHistory ? "Hide History" : "Show History"}
+        </button>
       </div>
+
+      {/* History Section - Only shown when showHistory is true */}
+      {showHistory && (
+        <div style={{ marginTop: "30px" }}>
+          <h3>Calculation History</h3>
+          {history.length === 0 ? (
+            <p>No calculations yet.</p>
+          ) : (
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {history.map((item) => (
+                <li
+                  key={item._id}
+                  style={{
+                    padding: "10px",
+                    margin: "5px 0",
+                    backgroundColor: "#f8f9fa",
+                    borderRadius: "5px",
+                    border: "1px solid #ddd"
+                  }}
+                >
+                  {item.num1} {item.operation} {item.num2} = <strong>{item.result}</strong>
+                  <br />
+                  <small style={{ color: "#666" }}>
+                    {new Date(item.createdAt).toLocaleString()}
+                  </small>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
   );
 };
