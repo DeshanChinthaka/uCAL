@@ -186,7 +186,8 @@ const Calculator = () => {
               border: "none",
               borderRadius: "12px",
               marginTop: "10px",
-              cursor: "pointer"
+              cursor: "pointer",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
             }}
           >
             =
