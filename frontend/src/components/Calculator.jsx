@@ -65,7 +65,7 @@ const Calculator = () => {
           placeholder="Enter first number"
           style={{ padding: "10px", width: "150px", margin: "0 10px" }}
         />
-
+{/* 
         <select
           value={operation}
           onChange={(e) => setOperation(e.target.value)}
@@ -75,7 +75,66 @@ const Calculator = () => {
           <option value="-">−</option>
           <option value="*">×</option>
           <option value="/">÷</option>
-        </select>
+        </select> */}
+
+        <div style={{ display: "flex", gap: "10px", margin: "0 10px" }}>
+          <button
+            onClick={() => setOperation('+')}
+            style={{
+              padding: "10px 15px",
+              fontSize: "18px",
+              backgroundColor: operation === '+' ? "#007bff" : "#6c757d",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+          >
+            +
+          </button>
+          <button
+            onClick={() => setOperation('-')}
+            style={{
+              padding: "10px 15px",
+              fontSize: "18px",
+              backgroundColor: operation === '-' ? "#007bff" : "#6c757d",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+          >
+            −
+          </button>
+          <button
+            onClick={() => setOperation('*')}
+            style={{
+              padding: "10px 15px",
+              fontSize: "18px",
+              backgroundColor: operation === '*' ? "#007bff" : "#6c757d",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+          >
+            ×
+          </button>
+          <button
+            onClick={() => setOperation('/')}
+            style={{
+              padding: "10px 15px",
+              fontSize: "18px",
+              backgroundColor: operation === '/' ? "#007bff" : "#6c757d",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer"
+            }}
+          >
+            ÷
+          </button>
+        </div>
 
         <input
           type="number"
@@ -94,7 +153,11 @@ const Calculator = () => {
       </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {result !== null && <h2>Result: {result}</h2>}
+      {result !== null && (
+        <h2>
+          Result: {result}
+        </h2>
+      )}
 
       {/* Toggle History Button */}
       <div style={{ marginTop: "30px" }}>
@@ -132,7 +195,7 @@ const Calculator = () => {
                   key={item._id}
                   style={{
                     width: "100%",
-                    maxWidth: "450px",  // This reduces the width of each box
+                    maxWidth: "250px",
                     padding: "14px 20px",
                     backgroundColor: "#f8f9fa",
                     borderRadius: "10px",
@@ -143,7 +206,9 @@ const Calculator = () => {
                   }}
                 >
                   <div style={{marginBottom: "6px" }}>
-                    {item.num1} {item.operation} {item.num2} = <span style={{ color: "#0f1010ff", fontWeight: "bold" }}>{item.result}</span>
+                    {item.num1} {item.operation} {item.num2} = 
+                    <span style={{ color: "#0f1010ff", fontWeight: "bold" }}>
+                      {Number(item.result).toFixed(4)}</span>
                   </div>
                   <div style={{ fontSize: "13px", color: "#666" }}>
                     {new Date(item.createdAt).toLocaleString()}
