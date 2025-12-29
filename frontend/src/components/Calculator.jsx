@@ -57,14 +57,47 @@ const Calculator = () => {
     <div style={{ maxWidth: "600px", margin: "50px auto", textAlign: "center", fontFamily: "Arial" }}>
       <h1>uCAL</h1>
 
-      <div style={{ margin: "30px 0" }}>
+      <div style={{ 
+        display: "grid",
+        gridTemplateColumns: "1fr 180px",
+        gap: "40px",
+        alignItems: "start" 
+      }}>
+          {/* Left: Input Fields (Vertical) */}
+        <div style={{
+          display: "flex",
+          gap: "30px"
+        }}>
         <input
           type="number"
           value={num1}
           onChange={(e) => setNum1(e.target.value)}
           placeholder="Enter first number"
-          style={{ padding: "10px", width: "150px", margin: "0 10px" }}
+          style={{ 
+             padding: "20px",
+              fontSize: "20px",
+              borderRadius: "12px",
+              border: "2px solid #333",
+              textAlign: "right",
+              outline: "none" 
+          }}
         />
+
+        <input
+            type="number"
+            value={num2}
+            onChange={(e) => setNum2(e.target.value)}
+            placeholder="Enter second number"
+            style={{
+              padding: "20px",
+              fontSize: "20px",
+              borderRadius: "12px",
+              border: "2px solid #333",
+              textAlign: "right",
+              outline: "none"
+            }}
+          />
+        </div>
 {/* 
         <select
           value={operation}
@@ -77,7 +110,11 @@ const Calculator = () => {
           <option value="/">÷</option>
         </select> */}
 
-        <div style={{ display: "flex", gap: "10px", margin: "0 10px" }}>
+        <div style={{ 
+          display: "flex",
+          gap: "10px", 
+          margin: "0 10px" 
+        }}>
           <button
             onClick={() => setOperation('+')}
             style={{
@@ -135,14 +172,6 @@ const Calculator = () => {
             ÷
           </button>
         </div>
-
-        <input
-          type="number"
-          value={num2}
-          onChange={(e) => setNum2(e.target.value)}
-          placeholder="Enter second number"
-          style={{ padding: "10px", width: "150px", margin: "0 10px" }}
-        />
 
         <button
           onClick={calculate}
