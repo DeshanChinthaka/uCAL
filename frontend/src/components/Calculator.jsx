@@ -115,7 +115,7 @@ const Calculator = () => {
             }}
           />
         </div>
-{/* 
+        {/* 
         <select
           value={operation}
           onChange={(e) => setOperation(e.target.value)}
