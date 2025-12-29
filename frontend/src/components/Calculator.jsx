@@ -112,6 +112,7 @@ const Calculator = () => {
 
         <div style={{ 
           display: "flex",
+          flexDirection: "column",
           gap: "10px", 
           margin: "0 10px" 
         }}>
