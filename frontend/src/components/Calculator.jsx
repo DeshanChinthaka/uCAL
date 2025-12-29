@@ -10,6 +10,22 @@ const Calculator = () => {
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
+  // Smart result formatter (keeps exact if ≤4 decimals, else rounds to 4)
+  const formatResult = (value) => {
+    if (value === null || value === undefined) return null;
+    const num = typeof value === 'string' ? parseFloat(value) : value;
+
+    if (Number.isInteger(num)) return num.toString();
+
+    const fixed = num.toFixed(10);
+    const trimmed = parseFloat(fixed);
+
+    if (Number.isInteger(trimmed * 10000)) {
+      return trimmed.toString();
+    }
+    return num.toFixed(4);
+  };
+
   const calculate = async () => {
     setError("");
     setResult(null);
@@ -222,7 +238,7 @@ const Calculator = () => {
         <div style={{ marginTop: "40px" }}>
           <h3>Calculation History</h3>
           {history.length === 0 ? (
-            <p>No calculations yet.</p>
+            <p style={{ textAlign: "center" }}>No calculations yet.</p>
           ) : (
             <div style={{
               display: "flex",
@@ -245,12 +261,11 @@ const Calculator = () => {
                     fontSize: "16px"
                   }}
                 >
-                  <div style={{marginBottom: "6px" }}>
-                    {item.num1} {item.operation} {item.num2} = 
-                    <span style={{ color: "#0f1010ff", fontWeight: "bold" }}>
-                      {Number(item.result).toFixed(4)}</span>
+                  <div style={{ fontWeight: "bold" }}>
+                    {item.num1} {item.operation.replace('*', '×').replace('/', '÷')} {item.num2} ={" "}
+                    <span style={{ color: "#0b69cdff" }}>{formatResult(item.result)}</span>
                   </div>
-                  <div style={{ fontSize: "13px", color: "#666" }}>
+                  <div style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>
                     {new Date(item.createdAt).toLocaleString()}
                   </div>
                 </div>
