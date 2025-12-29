@@ -194,7 +194,11 @@ const Calculator = () => {
           </button>
       </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ 
+        color: "red",
+        fontSize: "18px" 
+        }}>
+      {error}</p>}
       {result !== null && (
         <h2>
           Result: {result}
