@@ -63,8 +63,10 @@ const Calculator = () => {
         gap: "40px",
         alignItems: "start" 
       }}>
+        {/* Left: Input Fields (Vertical) */}
         <div style={{
           display: "flex",
+          flexDirection: "column",
           gap: "30px"
         }}>
         <input
