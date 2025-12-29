@@ -194,9 +194,10 @@ const Calculator = () => {
           </button>
       </div>
 
-      {error && <p style={{ 
-        color: "red", fontSize: "18px" }}>{error}</p>}
-      {result !== null && <h2 style={{ fontSize: "36px", color: "#333" }}>Result: {result}</h2>}
+      <div style= {{textAlign: "center", marginTop: "30px"}}>
+        {error && <p style={{color: "red", fontSize: "18px" }}>{error}</p>}
+        {result !== null && <h2 style={{ fontSize: "36px", color: "#333" }}>Result: {result}</h2>}
+      </div>      
 
       {/* Toggle History Button */}
       <div style={{ marginTop: "30px" }}>
