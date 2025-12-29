@@ -181,6 +181,7 @@ const Calculator = () => {
               padding: "20px",
               fontSize: "32px",
               fontWeight: "bold",
+              background: "linear-gradient(to right, #ff8c00, #ff2d00)",
               color: "white",
               border: "none",
               borderRadius: "12px",
