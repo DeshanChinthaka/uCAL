@@ -79,7 +79,7 @@ const Calculator = () => {
               fontSize: "20px",
               borderRadius: "12px",
               border: "2px solid #333",
-              textAlign: "right",
+              textAlign: "left",
               outline: "none" 
           }}
         />
@@ -94,7 +94,7 @@ const Calculator = () => {
               fontSize: "20px",
               borderRadius: "12px",
               border: "2px solid #333",
-              textAlign: "right",
+              textAlign: "left",
               outline: "none"
             }}
           />
@@ -205,10 +205,10 @@ const Calculator = () => {
           style={{
             padding: "10px 20px",
             fontSize: "16px",
-            backgroundColor: "#007bff",
+            backgroundColor: "#3300ffff",
             color: "white",
             border: "none",
-            borderRadius: "5px",
+            borderRadius: "10px",
             cursor: "pointer"
           }}
         >
