@@ -176,11 +176,19 @@ const Calculator = () => {
         </div>
 
         <button
-          onClick={calculate}
-          style={{ padding: "10px 20px", fontSize: "16px", marginLeft: "20px", cursor: "pointer", borderRadius: "15px", backgroundColor: "#4CAF50", color: "white" }}
-        >
-          Calculate
-        </button>
+            onClick={calculate}
+            style={{
+              padding: "20px",
+              fontSize: "32px",
+              fontWeight: "bold",
+              color: "white",
+              border: "none",
+              borderRadius: "12px",
+              marginTop: "10px"
+            }}
+          >
+            =
+          </button>
       </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
