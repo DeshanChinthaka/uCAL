@@ -105,6 +105,7 @@ const Calculator = () => {
             fontSize: "20px",
             borderRadius: "12px",
             border: "2px solid #333",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
             textAlign: "left",
             outline: "none" 
           }}
@@ -120,6 +121,7 @@ const Calculator = () => {
               fontSize: "20px",
               borderRadius: "12px",
               border: "2px solid #333",
+              boxShadow: "0 8px 40px rgba(97, 52, 52, 0.2), 0 8px 20px rgba(0, 0, 0, 0.8)",
               textAlign: "left",
               outline: "none"
             }}
@@ -138,28 +140,10 @@ const Calculator = () => {
         </select> */}
 
         <div style={{ 
-          // display: "grid",
-          // gridTemplateColumns: "1fr 1fr",
-          // gap: "10px", 
-          // margin: "0px 12px" 
           display: "flex",
           flexDirection: "column",
           gap: "20px"
         }}>
-          {/* <button
-            onClick={() => setOperation('+')}
-            style={{
-              padding: "10px 15px",
-              fontSize: "18px",
-              backgroundColor: operation === '+' ? "#007bff" : "#6c757d",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer"
-            }}
-          >
-            +
-          </button> */}
 
           <div style={{
             display: "grid",
@@ -175,6 +159,7 @@ const Calculator = () => {
                 fontSize: "26px",
                 borderRadius: "16px",
                 border: "2px solid #000",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
                 backgroundColor: operation === op ? "#0d6efd" : "#e0e0e0",
                 color: operation === op ? "#fff" : "#000",
                 cursor: "pointer",
@@ -192,7 +177,7 @@ const Calculator = () => {
               style={{
                 width: "100%",
                 height: "60px",
-                //padding: "0px",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.7)",
                 fontSize: "32px",
                 fontWeight: "bold",
                 background: "linear-gradient(to right, #ff8c00, #ff2d00)",
@@ -223,6 +208,7 @@ const Calculator = () => {
             padding: "10px 20px",
             fontSize: "16px",
             backgroundColor: "#3300ffff",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.5)",
             color: "white",
             border: "none",
             borderRadius: "10px",
@@ -236,7 +222,7 @@ const Calculator = () => {
       {/* History Section - Only shown when showHistory is true */}
       {showHistory && (
         <div style={{ marginTop: "40px" }}>
-          <h3>Calculation History</h3>
+          <h3 style={{ color: "#ffffffff" }}>Calculation History</h3>
           {history.length === 0 ? (
             <p style={{ textAlign: "center" }}>No calculations yet.</p>
           ) : (
