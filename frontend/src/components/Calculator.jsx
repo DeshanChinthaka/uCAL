@@ -70,15 +70,15 @@ const Calculator = () => {
   }, []);
 
   return (
-    <div style={{ maxWidth: "600px", margin: "50px auto", textAlign: "center", fontFamily: "Arial" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#132743ff", padding: "40px 20px" }}>
       <div style={{
-        maxWidth: "800px",
+        maxWidth: "500px",
         margin: "0 auto",
         //backgroundColor: "#cad6faff",
-        background: "rgba(180, 193, 241, 0.2)",
+        background: "rgba(180, 193, 241, 0.5)",
         borderRadius: "28px",
         boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.08)",
-        padding: "50px 60px",
+        padding: "40px 60px",
         fontFamily: "Arial, sans-serif"
       }}>
       <h1>uCAL</h1>
