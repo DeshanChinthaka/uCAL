@@ -71,6 +71,15 @@ const Calculator = () => {
 
   return (
     <div style={{ maxWidth: "600px", margin: "50px auto", textAlign: "center", fontFamily: "Arial" }}>
+      <div style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        backgroundColor: "#ffffff",
+        borderRadius: "28px",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.08)",
+        padding: "50px 60px",
+        fontFamily: "Arial, sans-serif"
+      }}>
       <h1>uCAL</h1>
 
       <div style={{ 
@@ -264,6 +273,7 @@ const Calculator = () => {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 };
