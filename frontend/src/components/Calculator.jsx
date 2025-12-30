@@ -83,7 +83,7 @@ const Calculator = () => {
         <div style={{
           display: "flex",
           flexDirection: "column",
-          gap: "10px"
+          gap: "20px"
         }}>
         <input
           type="number"
@@ -91,12 +91,12 @@ const Calculator = () => {
           onChange={(e) => setNum1(e.target.value)}
           placeholder="Enter first number"
           style={{ 
-             padding: "20px",
-              fontSize: "20px",
-              borderRadius: "12px",
-              border: "2px solid #333",
-              textAlign: "left",
-              outline: "none" 
+            padding: "20px",
+            fontSize: "20px",
+            borderRadius: "12px",
+            border: "2px solid #333",
+            textAlign: "left",
+            outline: "none" 
           }}
         />
 
