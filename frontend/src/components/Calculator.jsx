@@ -83,7 +83,7 @@ const Calculator = () => {
         <div style={{
           display: "flex",
           flexDirection: "column",
-          gap: "30px"
+          gap: "10px"
         }}>
         <input
           type="number"
@@ -130,7 +130,7 @@ const Calculator = () => {
         <div style={{ 
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gap: "20px", 
+          gap: "10px", 
           //margin: "0 10px" 
         }}>
           {/* <button
@@ -166,67 +166,29 @@ const Calculator = () => {
           </button>
           ))}
 
-          {/* <button
-            onClick={() => setOperation('-')}
-            style={{
-              padding: "10px 15px",
-              fontSize: "18px",
-              backgroundColor: operation === '-' ? "#007bff" : "#6c757d",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer"
-            }}
-          >
-            −
-          </button>
+          {/* Equal button (spans full width of grid) */}
           <button
-            onClick={() => setOperation('*')}
-            style={{
-              padding: "10px 15px",
-              fontSize: "18px",
-              backgroundColor: operation === '*' ? "#007bff" : "#6c757d",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer"
-            }}
-          >
-            ×
-          </button>
-          <button
-            onClick={() => setOperation('/')}
-            style={{
-              padding: "10px 15px",
-              fontSize: "18px",
-              backgroundColor: operation === '/' ? "#007bff" : "#6c757d",
-              color: "white",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer"
-            }}
-          >
-            ÷
-          </button> */}
-        </div>
-
-        <button
             onClick={calculate}
             style={{
+              width: "100%",
+              height: "80px",
               padding: "20px",
               fontSize: "32px",
               fontWeight: "bold",
               background: "linear-gradient(to right, #ff8c00, #ff2d00)",
               color: "white",
-              border: "none",
-              borderRadius: "12px",
-              marginTop: "10px",
+              border: "2px solid #000",
+              borderRadius: "20px",
+              marginTop: "30px",
               cursor: "pointer",
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
             }}
           >
             =
           </button>
+        </div>
+
+        
       </div>
 
       <div style= {{textAlign: "center", marginTop: "30px"}}>
