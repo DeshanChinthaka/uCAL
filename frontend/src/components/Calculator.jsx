@@ -171,7 +171,7 @@ const Calculator = () => {
             onClick={calculate}
             style={{
               width: "100%",
-              height: "80px",
+              height: "160px",
               padding: "20px",
               fontSize: "32px",
               fontWeight: "bold",
