@@ -77,7 +77,7 @@ const Calculator = () => {
         display: "grid",
         gridTemplateColumns: "1fr 180px",
         gap: "40px",
-        alignItems: "center" 
+        alignItems: "start" 
       }}>
         {/* Left: Input Fields (Vertical) */}
         <div style={{
