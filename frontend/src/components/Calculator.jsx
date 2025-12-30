@@ -77,7 +77,7 @@ const Calculator = () => {
         display: "grid",
         gridTemplateColumns: "1fr 180px",
         gap: "40px",
-        alignItems: "start" 
+        alignItems: "center" 
       }}>
         {/* Left: Input Fields (Vertical) */}
         <div style={{
@@ -128,12 +128,12 @@ const Calculator = () => {
         </select> */}
 
         <div style={{ 
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px", 
-          margin: "0 10px" 
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "20px", 
+          //margin: "0 10px" 
         }}>
-          <button
+          {/* <button
             onClick={() => setOperation('+')}
             style={{
               padding: "10px 15px",
@@ -146,8 +146,27 @@ const Calculator = () => {
             }}
           >
             +
-          </button>
+          </button> */}
+
+          {["+","-","*","/"].map((op) => (
           <button
+            key={op}
+            onClick={() => setOperation(op)}
+            style={{
+              height: "70px",
+              fontSize: "26px",
+              borderRadius: "16px",
+              border: "2px solid #000",
+              backgroundColor: operation === op ? "#0d6efd" : "#e0e0e0",
+              color: operation === op ? "#fff" : "#000",
+              cursor: "pointer",
+            }}
+          >
+            {op === "*" ? "×" : op === "/" ? "÷" : op}
+          </button>
+          ))}
+
+          {/* <button
             onClick={() => setOperation('-')}
             style={{
               padding: "10px 15px",
@@ -188,7 +207,7 @@ const Calculator = () => {
             }}
           >
             ÷
-          </button>
+          </button> */}
         </div>
 
         <button
