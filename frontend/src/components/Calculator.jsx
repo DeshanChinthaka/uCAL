@@ -74,7 +74,8 @@ const Calculator = () => {
       <div style={{
         maxWidth: "800px",
         margin: "0 auto",
-        backgroundColor: "#ffffff",
+        //backgroundColor: "#cad6faff",
+        background: "rgba(180, 193, 241, 0.2)",
         borderRadius: "28px",
         boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.08)",
         padding: "50px 60px",
