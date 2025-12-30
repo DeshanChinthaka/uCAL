@@ -70,7 +70,7 @@ const Calculator = () => {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#132743ff", padding: "40px 20px" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#0a106bff", padding: "40px 20px" }}>
       <div style={{
         maxWidth: "500px",
         margin: "0 auto",
@@ -81,7 +81,7 @@ const Calculator = () => {
         padding: "40px 60px",
         fontFamily: "Arial, sans-serif"
       }}>
-      <h1>uCAL</h1>
+      <h1 style={{ textAlign: "center", marginBottom: "50px", fontSize: "40px", fontWeight: "bold", color: "#ffffffff" }}>uCAL</h1>
 
       <div style={{ 
         display: "grid",
