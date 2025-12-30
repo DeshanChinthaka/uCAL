@@ -128,10 +128,13 @@ const Calculator = () => {
         </select> */}
 
         <div style={{ 
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "10px", 
-          //margin: "0 10px" 
+          // display: "grid",
+          // gridTemplateColumns: "1fr 1fr",
+          // gap: "10px", 
+          // margin: "0px 12px" 
+          display: "flex",
+          flexDirection: "column",
+          gap: "30px"
         }}>
           {/* <button
             onClick={() => setOperation('+')}
@@ -148,47 +151,53 @@ const Calculator = () => {
             +
           </button> */}
 
-          {["+","-","*","/"].map((op) => (
-          <button
-            key={op}
-            onClick={() => setOperation(op)}
-            style={{
-              height: "70px",
-              fontSize: "26px",
-              borderRadius: "16px",
-              border: "2px solid #000",
-              backgroundColor: operation === op ? "#0d6efd" : "#e0e0e0",
-              color: operation === op ? "#fff" : "#000",
-              cursor: "pointer",
-            }}
-          >
-            {op === "*" ? "×" : op === "/" ? "÷" : op}
-          </button>
-          ))}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "15px"
+          }}>  
+            {["+","-","*","/"].map((op) => (
+            <button
+              key={op}
+              onClick={() => setOperation(op)}
+              style={{
+                height: "70px",
+                fontSize: "26px",
+                borderRadius: "16px",
+                border: "2px solid #000",
+                backgroundColor: operation === op ? "#0d6efd" : "#e0e0e0",
+                color: operation === op ? "#fff" : "#000",
+                cursor: "pointer",
+              }}
+            >
+              {op === "*" ? "×" : op === "/" ? "÷" : op}
+            </button>
+            ))}
+          </div>
 
           {/* Equal button (spans full width of grid) */}
-          <button
-            onClick={calculate}
-            style={{
-              width: "100%",
-              height: "160px",
-              padding: "20px",
-              fontSize: "32px",
-              fontWeight: "bold",
-              background: "linear-gradient(to right, #ff8c00, #ff2d00)",
-              color: "white",
-              border: "2px solid #000",
-              borderRadius: "20px",
-              marginTop: "30px",
-              cursor: "pointer",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
-            }}
-          >
-            =
-          </button>
-        </div>
-
-        
+          <div style={{ display: "grid", gridTemplateColumns: "1fr" }}>
+            <button
+              onClick={calculate}
+              style={{
+                width: "100%",
+                height: "160px",
+                padding: "20px",
+                fontSize: "32px",
+                fontWeight: "bold",
+                background: "linear-gradient(to right, #ff8c00, #ff2d00)",
+                color: "white",
+                border: "2px solid #000",
+                borderRadius: "20px",
+                marginTop: "30px",
+                cursor: "pointer",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
+              }}
+            >
+              =
+            </button>
+          </div>
+        </div>  
       </div>
 
       <div style= {{textAlign: "center", marginTop: "30px"}}>
