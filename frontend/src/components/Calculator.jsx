@@ -134,7 +134,7 @@ const Calculator = () => {
           // margin: "0px 12px" 
           display: "flex",
           flexDirection: "column",
-          gap: "30px"
+          gap: "20px"
         }}>
           {/* <button
             onClick={() => setOperation('+')}
@@ -181,15 +181,15 @@ const Calculator = () => {
               onClick={calculate}
               style={{
                 width: "100%",
-                height: "160px",
-                padding: "20px",
+                height: "60px",
+                //padding: "0px",
                 fontSize: "32px",
                 fontWeight: "bold",
                 background: "linear-gradient(to right, #ff8c00, #ff2d00)",
                 color: "white",
                 border: "2px solid #000",
                 borderRadius: "20px",
-                marginTop: "30px",
+                marginTop: "-10px",
                 cursor: "pointer",
                 boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
               }}
