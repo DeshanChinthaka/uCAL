@@ -69,6 +69,18 @@ const Calculator = () => {
     fetchHistory();
   }, []);
 
+  const clearHistory = async () => {
+  if (!window.confirm("Are you sure you want to clear all history?")) return;
+
+  try {
+    await axios.delete("http://localhost:5000/api/calculate/history");
+    setHistory([]);  // Immediately clear UI
+    alert("History cleared!");
+  } catch (err) {
+    alert("Failed to clear history");
+  }
+  };
+
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#0a106bff", padding: "40px 20px" }}>
       <div style={{
