@@ -56,3 +56,12 @@ exports.getHistory = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+exports.clearHistory = async (req, res) => {
+  try {
+    await Calculation.deleteMany({});  // Deletes all calculations
+    res.json({ message: "History cleared successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error clearing history" });
+  }
+};
