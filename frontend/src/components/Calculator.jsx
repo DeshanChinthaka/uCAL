@@ -148,7 +148,7 @@ const Calculator = () => {
           <div style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "15px"
+            gap: "10px"
           }}>  
             {["+","-","*","/"].map((op) => (
             <button
@@ -176,7 +176,7 @@ const Calculator = () => {
             <button
               onClick={calculate}
               style={{
-                width: "100%",
+                width: "90%",
                 height: "60px",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.7)",
                 fontSize: "32px",
