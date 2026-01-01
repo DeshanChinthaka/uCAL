@@ -105,7 +105,7 @@ const Calculator = () => {
             fontSize: "20px",
             borderRadius: "12px",
             border: "2px solid #333",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
+            boxShadow: "0 8px 40px rgba(97, 52, 52, 0.2), 0 8px 20px rgba(0,0,0,0.8)",
             textAlign: "left",
             outline: "none" 
           }}
