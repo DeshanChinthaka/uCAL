@@ -155,7 +155,8 @@ const Calculator = () => {
               key={op}
               onClick={() => setOperation(op)}
               style={{
-                height: "70px",
+                width: "80%",
+                height: "60px",
                 fontSize: "26px",
                 borderRadius: "16px",
                 border: "2px solid #000",
