@@ -70,7 +70,7 @@ const Calculator = () => {
   }, []);
 
   const clearHistory = async () => {
-  if (!window.confirm("Are you sure you want to clear all history?")) return;
+  if (!window.confirm("This will clear all the calculation history.")) return;
 
   try {
     await axios.delete("http://localhost:5000/api/calculate/history");
@@ -237,6 +237,24 @@ const Calculator = () => {
       {showHistory && (
         <div style={{ marginTop: "40px" }}>
           <h3 style={{ color: "#ffffffff" }}>Calculation History</h3>
+          
+          {history.length > 0 && (
+            <button
+              onClick={clearHistory}
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                backgroundColor: "#dc3545",
+                color: "white",
+                border: "none",
+                borderRadius: "12px",
+                cursor: "pointer"
+              }}
+            >
+              Clear History
+            </button>
+          )}
+
           {history.length === 0 ? (
             <p style={{ textAlign: "center" }}>No calculations yet.</p>
           ) : (
