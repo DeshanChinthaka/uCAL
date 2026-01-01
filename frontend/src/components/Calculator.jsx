@@ -235,25 +235,8 @@ const Calculator = () => {
 
       {/* History Section - Only shown when showHistory is true */}
       {showHistory && (
-        <div style={{ marginTop: "40px" }}>
+        <div style={{ marginTop: "40px", marginBottom: "50px" }}>
           <h3 style={{ color: "#ffffffff" }}>Calculation History</h3>
-          
-          {history.length > 0 && (
-            <button
-              onClick={clearHistory}
-              style={{
-                padding: "10px 20px",
-                fontSize: "16px",
-                backgroundColor: "#dc3545",
-                color: "white",
-                border: "none",
-                borderRadius: "12px",
-                cursor: "pointer"
-              }}
-            >
-              Clear History
-            </button>
-          )}
 
           {history.length === 0 ? (
             <p style={{ textAlign: "center" }}>No calculations yet.</p>
