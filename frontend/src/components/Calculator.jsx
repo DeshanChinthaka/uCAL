@@ -194,7 +194,7 @@ const Calculator = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.7)",
                 fontSize: "32px",
                 fontWeight: "bold",
-                background: "linear-gradient(to right, #ff8c00, #ff2d00)",
+                background: "linear-gradient(to right, #7c67efff, #0bf32aff)",
                 color: "white",
                 border: "2px solid #000",
                 borderRadius: "20px",
@@ -215,7 +215,7 @@ const Calculator = () => {
       </div>      
 
       {/* Toggle History Button */}
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "30px", flexWrap: "wrap" }}>
         <button
           onClick={toggleHistory}
           style={{
@@ -231,12 +231,32 @@ const Calculator = () => {
         >
           {showHistory ? "Hide History" : "Show History"}
         </button>
+
+        {showHistory && history.length > 0 && (
+            <button
+              onClick={clearHistory}
+              style={{
+                padding: "10px 20px",
+                fontSize: "16px",
+                marginLeft: "10px",
+                backgroundColor: "#e41313ff",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.5)",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                cursor: "pointer"
+              }}
+            >
+              Clear History
+            </button>
+          )}
+
       </div>
 
       {/* History Section - Only shown when showHistory is true */}
       {showHistory && (
         <div style={{ marginTop: "40px", marginBottom: "50px" }}>
-          <h3 style={{ color: "#ffffffff" }}>Calculation History</h3>
+          <h3 style={{ color: "#ffffffff",textAlign: "center", marginBottom: "20px" }}>Calculation History</h3>
 
           {history.length === 0 ? (
             <p style={{ textAlign: "center" }}>No calculations yet.</p>
