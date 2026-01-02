@@ -210,7 +210,7 @@ const Calculator = () => {
       </div>
 
       <div style= {{textAlign: "center", marginTop: "30px"}}>
-        {error && <p style={{color: "red", fontSize: "18px" }}>{error}</p>}
+        {error && <p style={{color: "#a5edb3ff", fontSize: "18px" }}>{error}</p>}
         {result !== null && <h2 style={{ fontSize: "36px", color: "#333" }}>Result: {result}</h2>}
       </div>      
 
