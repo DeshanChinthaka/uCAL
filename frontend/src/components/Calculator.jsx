@@ -218,7 +218,7 @@ const Calculator = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.7)",
                 fontSize: "32px",
                 fontWeight: "bold",
-                background: "linear-gradient(to right, #7c67efff, #0bf32aff)",
+                background: "linear-gradient(to right, #60f09eff, #f72020ff)",
                 color: "white",
                 border: "2px solid #000",
                 borderRadius: "20px",
