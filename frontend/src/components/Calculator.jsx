@@ -185,62 +185,27 @@ const Calculator = () => {
               +
             </button>
 
-            {/* − button: top right */}
-            <button
-              onClick={() => setOperation('-')}
-              style={{
-                width: "80%",
-                height: "60px",
-                fontSize: "26px",
-                borderRadius: "16px",
-                border: "2px solid #000",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
-                backgroundColor: operation === '-' ? "#3078f5ff" : "#e0e0e0",
-                color: operation === '-' ? "#fff" : "#000",
-                transition: "all 0.2s ease",
-                cursor: "pointer",
-              }}
-            >
-              −
-            </button>
-
-            {/* × button: middle right (under −) */}
-            <button
-              onClick={() => setOperation('*')}
-              style={{
-                width: "80%",
-                height: "60px",
-                fontSize: "26px",
-                borderRadius: "16px",
-                border: "2px solid #000",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
-                backgroundColor: operation === '*' ? "#3078f5ff" : "#e0e0e0",
-                color: operation === '*' ? "#fff" : "#000",
-                transition: "all 0.2s ease",
-                cursor: "pointer",
-              }}
-            >
-              ×
-            </button>
-
-            {/* ÷ button: bottom right (under ×) */}
-            <button
-              onClick={() => setOperation('/')}
-              style={{
-                width: "80%",
-                height: "60px",
-                fontSize: "26px",
-                borderRadius: "16px",
-                border: "2px solid #000",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
-                backgroundColor: operation === '/' ? "#3078f5ff" : "#e0e0e0",
-                color: operation === '/' ? "#fff" : "#000",
-                transition: "all 0.2s ease",
-                cursor: "pointer",
-              }}
-            >
-              ÷
-            </button>
+            {/* Reusable buttons for −, ×, ÷ on the right */}
+            {["-", "*", "/"].map((op) => (
+              <button
+                key={op}
+                onClick={() => setOperation(op)}
+                style={{
+                  width: "80%",
+                  height: "60px",
+                  fontSize: "26px",
+                  borderRadius: "16px",
+                  border: "2px solid #000",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
+                  backgroundColor: operation === op ? "#3078f5ff" : "#e0e0e0",
+                  color: operation === op ? "#fff" : "#000",
+                  transition: "all 0.2s ease",
+                  cursor: "pointer",
+                }}
+              >
+                {op === "*" ? "×" : op === "/" ? "÷" : op}
+              </button>
+            ))}
           </div>
 
           {/* Equal button (spans full width of grid) */}
