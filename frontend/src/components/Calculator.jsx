@@ -93,7 +93,7 @@ const Calculator = () => {
         padding: "40px 60px",
         fontFamily: "Arial, sans-serif"
       }}>
-      <h1 style={{ textAlign: "center", marginBottom: "50px", fontSize: "40px", fontWeight: "bold", color: "#ffffffff" }}>uCAL</h1>
+      <h1 style={{ textAlign: "center", marginBottom: "30px", fontSize: "40px", fontWeight: "bold", color: "#ffffffff" }}>uCAL</h1>
 
       <div style={{ 
         display: "grid",
