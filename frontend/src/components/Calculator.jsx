@@ -160,34 +160,34 @@ const Calculator = () => {
           <div style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "10px"
-          }}>  
-
-            {["+"].map((op) => (
+            gridTemplateRows: "1fr 1fr 1fr",  // 3 rows to place buttons correctly
+            gap: "10px",
+            alignItems: "center",
+          }}>
+            {/* + button: left side, spans full row height (row 1 to 3) */}
             <button
-              key={op}
-              onClick={() => setOperation(op)}
+              onClick={() => setOperation('+')}
               style={{
                 width: "80%",
-                height: "155px",
-                fontSize: "26px",
+                height: "180px",  // Tall to cover all 3 rows
+                gridRow: "1 / 4",  // Span all 3 rows
+                fontSize: "32px",
+                fontWeight: "bold",
                 borderRadius: "16px",
                 border: "2px solid #000",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
-                backgroundColor: operation === op ? "#3078f5ff" : "#e0e0e0",
-                color: operation === op ? "#fff" : "#000",
+                backgroundColor: operation === '+' ? "#3078f5ff" : "#e0e0e0",
+                color: operation === '+' ? "#fff" : "#000",
                 transition: "all 0.2s ease",
                 cursor: "pointer",
               }}
             >
-              {op}
+              +
             </button>
-            ))}
 
-            {["-","*","/"].map((op) => (
+            {/* − button: top right */}
             <button
-              key={op}
-              onClick={() => setOperation(op)}
+              onClick={() => setOperation('-')}
               style={{
                 width: "80%",
                 height: "60px",
@@ -195,15 +195,52 @@ const Calculator = () => {
                 borderRadius: "16px",
                 border: "2px solid #000",
                 boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
-                backgroundColor: operation === op ? "#3078f5ff" : "#e0e0e0",
-                color: operation === op ? "#fff" : "#000",
+                backgroundColor: operation === '-' ? "#3078f5ff" : "#e0e0e0",
+                color: operation === '-' ? "#fff" : "#000",
                 transition: "all 0.2s ease",
                 cursor: "pointer",
               }}
             >
-              {op === "*" ? "×" : op === "/" ? "÷" : op}
+              −
             </button>
-            ))}
+
+            {/* × button: middle right (under −) */}
+            <button
+              onClick={() => setOperation('*')}
+              style={{
+                width: "80%",
+                height: "60px",
+                fontSize: "26px",
+                borderRadius: "16px",
+                border: "2px solid #000",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
+                backgroundColor: operation === '*' ? "#3078f5ff" : "#e0e0e0",
+                color: operation === '*' ? "#fff" : "#000",
+                transition: "all 0.2s ease",
+                cursor: "pointer",
+              }}
+            >
+              ×
+            </button>
+
+            {/* ÷ button: bottom right (under ×) */}
+            <button
+              onClick={() => setOperation('/')}
+              style={{
+                width: "80%",
+                height: "60px",
+                fontSize: "26px",
+                borderRadius: "16px",
+                border: "2px solid #000",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
+                backgroundColor: operation === '/' ? "#3078f5ff" : "#e0e0e0",
+                color: operation === '/' ? "#fff" : "#000",
+                transition: "all 0.2s ease",
+                cursor: "pointer",
+              }}
+            >
+              ÷
+            </button>
           </div>
 
           {/* Equal button (spans full width of grid) */}
