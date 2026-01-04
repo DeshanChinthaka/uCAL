@@ -162,7 +162,29 @@ const Calculator = () => {
             gridTemplateColumns: "1fr 1fr",
             gap: "10px"
           }}>  
-            {["+","-","*","/"].map((op) => (
+
+            {["+"].map((op) => (
+            <button
+              key={op}
+              onClick={() => setOperation(op)}
+              style={{
+                width: "80%",
+                height: "155px",
+                fontSize: "26px",
+                borderRadius: "16px",
+                border: "2px solid #000",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1), 0 8px 20px rgba(0,0,0,0.3)",
+                backgroundColor: operation === op ? "#3078f5ff" : "#e0e0e0",
+                color: operation === op ? "#fff" : "#000",
+                transition: "all 0.2s ease",
+                cursor: "pointer",
+              }}
+            >
+              {op}
+            </button>
+            ))}
+
+            {["-","*","/"].map((op) => (
             <button
               key={op}
               onClick={() => setOperation(op)}
